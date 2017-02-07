@@ -1,0 +1,17 @@
+[application]
+name = "Client Portal Aggregator Frontend"
+repo = "quay.io/reevoo/client_portal-aggregator_frontend"
+
+[build]
+builder = "frontendJS"
+version = "node6"
+
+install = [
+  'yarn install',
+  'gem install bundler',
+  'bundle install'
+]
+
+script = [
+  'yarn run ci',
+]

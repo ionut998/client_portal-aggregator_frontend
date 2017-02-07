@@ -1,0 +1,32 @@
+@import '../../../../node_modules/client_portal-assets/dist/sass/colours';
+
+.header {
+  &__burger {
+    background-color: $reevoo-orange;
+
+    &:hover {
+      background-color: $reevoo-light-orange;
+    }
+  }
+
+  &__logo {
+    align-items: center;
+    color: #fff;
+    display: flex;
+    height: 100%;
+    justify-content: center;
+    width: 175px;
+
+    &:hover {
+      background-color: $reevoo-light-orange;
+    }
+
+    span {
+      margin-top: -3px;
+
+      &:before {
+        font-size: 40px;
+      }
+    }
+  }
+}
