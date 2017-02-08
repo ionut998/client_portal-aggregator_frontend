@@ -15,9 +15,9 @@ const MainPanel = ({leftHandNavVisible}) => {
   return (
     <div className={`main-panel ${leftHandNavVisible ? 'collapsed' : 'expanded'}`}>
       <Card style={cardHeaderStyles} className='main-panel__header'>
-        <CardHeader title="Aggregator main panel" titleStyle={cardHeaderTitleStyles} />
+        <CardHeader title='Aggregator main panel' titleStyle={cardHeaderTitleStyles} />
       </Card>
-      <div id="main-container" />
+      <div id='main-container' />
     </div>
   )
 }

@@ -53,7 +53,7 @@ const Header = ({ leftIconClick }) => (
     }
     iconStyleLeft={iconLeftContainerStyles}
     style={headerStyles}
-    title={<a className='header__logo' href='/'><span className='icon-reevoo_logo'></span></a>}
+    title={<a className='header__logo' href='/'><span className='icon-reevoo_logo' /></a>}
   />
 )
 

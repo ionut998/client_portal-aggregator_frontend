@@ -22,8 +22,8 @@ render(
   <Provider store={store}>
     <ReduxRouter>
       <Router history={hashHistory}>
-        <Route path="/" component={AppContainer}>
-          <Route path="manufacturer/:id" component={MainPanelContainer} />
+        <Route path='/' component={AppContainer}>
+          <Route path='manufacturer/:id' component={MainPanelContainer} />
         </Route>
       </Router>
     </ReduxRouter>

@@ -1,7 +1,7 @@
 import React, { PropTypes } from 'react'
 import Divider from 'material-ui/Divider'
 import Drawer from 'material-ui/Drawer'
-import { List, MakeSelectable } from 'material-ui/List'
+import { List, makeSelectable } from 'material-ui/List'
 import './left_hand_nav.scss'
 
 import LeftHandNavHeader from '../left_hand_nav_header/left_hand_nav_header.jsx'
@@ -17,7 +17,7 @@ const selectedItemStyle = {
   textDecoration: 'none',
 }
 
-const SelectableList = MakeSelectable(List)
+const SelectableList = makeSelectable(List)
 
 /* This is needed to avoid a nasty warning/error in the console.
  * Once we refactor the reducers we can simplify it accessing the dashboards by id directly.

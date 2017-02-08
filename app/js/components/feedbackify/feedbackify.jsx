@@ -8,7 +8,7 @@ const setFeedbackifyValues = (email) => () => {
 }
 
 const Feedbackify = ({email}) => (
-  <div className="feedbackify" onClick={setFeedbackifyValues(email)}>feedback</div>
+  <div className='feedbackify' onClick={setFeedbackifyValues(email)}>feedback</div>
 )
 
 Feedbackify.propTypes = {
