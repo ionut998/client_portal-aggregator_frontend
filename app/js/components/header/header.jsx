@@ -7,6 +7,7 @@ import NavigationMenu from 'material-ui/svg-icons/navigation/menu'
 import './header.scss'
 import 'client_portal-assets/dist/sass/_reevooclientportaldings.scss' // Load icons
 
+// TODO: check if following is still a valid issue
 // The material-ui AppBar component claims to have some properties for customising it.
 // However, they are a bit shit and we have to do a bit of tomfoolery here to make
 // the hover effects we want work. The problem we hit was:

@@ -12,6 +12,7 @@ const initialState = {
   profile: null,
 }
 
+// TODO: why we have image references in the reducer?
 import adminImagePath from 'client_portal-assets/dist/images/app_icons/large/admin.png'
 import analyticsImagePath from 'client_portal-assets/dist/images/app_icons/large/analytics.png'
 import fastResponseImagePath from 'client_portal-assets/dist/images/app_icons/large/fast_response.png'
@@ -20,6 +21,7 @@ import vettingImagePath from 'client_portal-assets/dist/images/app_icons/large/v
 import helpImagePath from 'client_portal-assets/dist/images/app_icons/large/help.png'
 import aggregatorImagePath from 'client_portal-assets/dist/images/app_icons/large/facebook.png'
 
+// TODO: maybe this should get out of here?
 export const modules = (accessibleModules) => {
   const availableModules = {
     admin: {
@@ -75,17 +77,6 @@ export const modules = (accessibleModules) => {
   return orderedModules
 }
 
-const initialUIState = {
-  loadingDashboardValues: false,
-}
-
-export const ui = (state = initialUIState, action) => {
-  switch (action.type) {
-    default:
-      return state
-  }
-}
-
 export const aggregatorApp = (state = initialState, action) => {
   switch (action.type) {
     case actionTypes.TOGGLE_LEFT_HAND_NAV:
@@ -108,6 +99,5 @@ export const aggregatorApp = (state = initialState, action) => {
 
 export default combineReducers({
   aggregatorApp,
-  ui,
   router: routerStateReducer,
 })
