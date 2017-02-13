@@ -13,9 +13,9 @@ MainPanelContainer.propTypes = {
   leftHandNavVisible: PropTypes.bool.isRequired,
 }
 
-const mapStateToProps = ({ aggregatorApp, router }) => {
+const mapStateToProps = ({ header, router }) => {
   return {
-    leftHandNavVisible: aggregatorApp.leftHandNavVisible,
+    leftHandNavVisible: header.leftHandNavVisible,
   }
 }
 

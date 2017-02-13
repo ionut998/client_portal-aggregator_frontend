@@ -1,8 +1,8 @@
-import { aggregatorApp, ui } from 'app/js/reducers/reducers.js'
+import { header } from 'app/js/reducers/reducers.js'
 import * as actionTypes from 'app/js/constants/action_types'
 
 describe('reducers', () => {
-  describe('aggregatorApp', () => {
+  describe('header', () => {
     let initialState = {
       leftHandNavVisible: true,
       headerModulesVisible: false,
@@ -11,12 +11,12 @@ describe('reducers', () => {
     }
 
     it('returns the initial state', () => {
-      expect(aggregatorApp(undefined, {})).toEqual(initialState)
+      expect(header(undefined, {})).toEqual(initialState)
     })
 
     it('returns the current state if action type is not defined', () => {
       expect(
-        aggregatorApp(
+        header(
           {leftHandNavVisible: true},
           {type: {actions: undefined}}
         )
@@ -28,7 +28,7 @@ describe('reducers', () => {
       describe('when the left hand nav is open', () => {
         it('closes the left hand nav', () => {
           expect(
-            aggregatorApp(
+            header(
               {leftHandNavVisible: true},
               {type: actionTypes.TOGGLE_LEFT_HAND_NAV}
             )
@@ -43,7 +43,7 @@ describe('reducers', () => {
       describe('when the left hand nav is closed', () => {
         it('opens the left hand nav', () => {
           expect(
-            aggregatorApp(
+            header(
               {leftHandNavVisible: false},
               {type: actionTypes.TOGGLE_LEFT_HAND_NAV}
             )
@@ -58,8 +58,8 @@ describe('reducers', () => {
 
     describe('SHOW_HEADER_MODULES', () => {
       it('orders the items appropriately', () => {
-        let unorderedModules = ['reevoo_admin', 'vetting', 'analytics', 'fast_response', 'help', 'admin', 'aggregator']
-        let orderedModules = aggregatorApp(
+        let unorderedModules = ['reevoo_admin', 'vetting', 'analytics', 'fast_response', 'help', 'admin', 'header', 'aggregator']
+        let orderedModules = header(
           undefined,
           {
             type: actionTypes.SHOW_HEADER_MODULES,
@@ -73,16 +73,6 @@ describe('reducers', () => {
           ['Admin', 'Aggregator', 'Analytics', 'Fast Response', 'Reevoo Admin', 'Vetting', 'Help & FAQ']
         )
       })
-    })
-  })
-
-  describe('ui', () => {
-    let initialState = {
-      loadingDashboardValues: false,
-    }
-
-    it('returns the initial state', () => {
-      expect(ui(undefined, {})).toEqual(initialState)
     })
   })
 })

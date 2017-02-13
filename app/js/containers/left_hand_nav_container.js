@@ -14,8 +14,8 @@ LeftHandNavContainer.propTypes = {
   selectedDashboardId: PropTypes.string,
 }
 
-const mapStateToProps = ({ aggregatorApp, router }) => ({
-  leftHandNavVisible: aggregatorApp.leftHandNavVisible,
+const mapStateToProps = ({ header, router }) => ({
+  leftHandNavVisible: header.leftHandNavVisible,
   selectedDashboardId: router.params ? router.params.id : null,
 })
 

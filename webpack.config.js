@@ -69,7 +69,7 @@ let webpackConfig = {}
 
 if (TARGET === 'start' || !TARGET) {
   webpackConfig = merge(common, {
-    devtool: 'eval-source-map',
+    devtool: 'source-map',
     devServer: {
       port: 15900
     }

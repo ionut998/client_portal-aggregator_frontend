@@ -6,8 +6,11 @@ import { routeUtils } from '../helpers/router'
 const LOGIN_URL_WITH_REDIRECT = `${LOGIN_URL}?return_url=${CP_AGGREGATOR_URL}`
 const REFRESH_TOKEN_URL = `${CP_ADMIN_API}api_session/refresh`
 const MAXIMUM_RESTARTED_REQUESTS = 4
+const PROFILE_URL = `${CP_ADMIN_API}profile`
 
 let restartedRequests = []
+
+export const getProfile = () => get(PROFILE_URL).then(parseJSON)
 
 const refreshToken = () => post(REFRESH_TOKEN_URL, { refresh_token: getRefreshToken() })
 
@@ -55,6 +58,7 @@ const cleanRestartedRequests = (response) => {
 * There can be a case when API keep returning 401 and this would lead to the infinite loop of ajax calls. For these reasons
 * we allow to repeat ajax calls just MAXIMUM_RESTARTED_REQUESTS times. If this limit exceed, the user is redirected to the login page.
 */
+// TODO: app fails if client_portal-admin-backend is down
 const resolveRejectedRequest = (request) => {
   return refreshToken()
   .then(parseJSON)
