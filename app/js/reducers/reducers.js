@@ -1,3 +1,4 @@
+// TODO: refactor all of it.
 import { combineReducers } from 'redux'
 import { routerStateReducer } from 'redux-router'
 import * as actionTypes from '../constants/action_types'
@@ -77,7 +78,7 @@ export const modules = (accessibleModules) => {
   return orderedModules
 }
 
-export const aggregatorApp = (state = initialState, action) => {
+export const header = (state = initialState, action) => {
   switch (action.type) {
     case actionTypes.TOGGLE_LEFT_HAND_NAV:
       return { ...state, leftHandNavVisible: !state.leftHandNavVisible }
@@ -98,6 +99,6 @@ export const aggregatorApp = (state = initialState, action) => {
 }
 
 export default combineReducers({
-  aggregatorApp,
+  header,
   router: routerStateReducer,
 })

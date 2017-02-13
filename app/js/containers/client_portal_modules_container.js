@@ -1,8 +1,8 @@
 import { connect } from 'react-redux'
 import ClientPortalModules from '../components/client_portal_modules/client_portal_modules'
 
-const mapStateToProps = ({aggregatorApp}) => ({
-  modules: aggregatorApp.accessibleModules,
+const mapStateToProps = ({appState}) => ({
+  modules: appState.accessibleModules,
 })
 
 export default connect(
