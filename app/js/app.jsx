@@ -6,10 +6,8 @@ import thunk from 'redux-thunk'
 import { render } from 'react-dom'
 import { Provider } from 'react-redux'
 import reducers from './reducers/reducers'
-
-import createHashHistory from 'history/lib/createHashHistory'
-
 import AppContainer from './containers/app_container'
+import createHashHistory from 'history/lib/createHashHistory'
 
 // Compose reduxReactRouter with other store enhancers
 const store = compose(
@@ -22,7 +20,7 @@ render(
   <Provider store={store}>
     <ReduxRouter>
       <Router history={hashHistory}> /*  TODO: maybe use browserHistory? */
-        <Route path='/' component={AppContainer} /> /* TODO: add authentication  */
+        <Route path='/' component={AppContainer} />
       </Router>
     </ReduxRouter>
   </Provider>, document.getElementById('app')

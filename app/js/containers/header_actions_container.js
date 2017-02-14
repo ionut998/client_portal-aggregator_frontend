@@ -2,8 +2,8 @@ import { connect } from 'react-redux'
 import { showHeaderModules, hideHeaderModules } from '../actions/actions.js'
 import HeaderActions from '../components/header_actions/header_actions'
 
-const mapStateToProps = ({ appState }) => ({
-  headerModulesVisible: appState.headerModulesVisible,
+const mapStateToProps = ({ header }) => ({
+  headerModulesVisible: header.headerModulesVisible,
 })
 
 const mapDispatchToProps = (dispatch) => {

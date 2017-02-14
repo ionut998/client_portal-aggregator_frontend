@@ -2,6 +2,9 @@ import React, { Component, PropTypes } from 'react'
 import { connect } from 'react-redux'
 
 import Header from '../containers/header_container'
+import LeftHandNavContainer from '../containers/left_hand_nav_container'
+import MainPanelContainer from '../containers/main_panel_container'
+import MainContent from '../components/main_content/main_content'
 
 import '../../styles/styles.scss' // Load global overrides (as few as possible please)
 import colours from '!!sass-variable-loader!client_portal-assets/dist/sass/colours.scss' // Load Reevoo colour variables
@@ -38,7 +41,10 @@ class App extends Component {
       <MuiThemeProvider muiTheme={rvMuiTheme}>
         <div>
           <Header />
-          {this.props.children}
+          <MainContent>
+            <LeftHandNavContainer />
+            <MainPanelContainer />
+          </MainContent>
         </div>
       </MuiThemeProvider>
     )
